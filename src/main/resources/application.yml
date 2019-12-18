@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: api-gateway
+
+server:
+  port: 1101
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://120.77.219.194:10086/eureka/
+
+zuul:
+  routes:
+    service:
+      path: /service/**
+      url: user-service
+    consumer:
+      path: /consumer/**
+      url: user-consumer
